@@ -1,20 +1,21 @@
-package com.cron_email.cron_email.features.auth.dto;
+package com.cron_email.cron_email.features._auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * ░█▀▄░▀▀█░▀▀█░█▀█░█▀█░█▀█
+ * ░█░█░░▀▄░░▀▄░█▀▀░█▀█░█░█
+ * ░▀▀░░▀▀░░▀▀░░▀░░░▀░▀░▀░▀
+ *
+ * @author d33pan on 9/13/25
+ */
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class UserDto {
-    private Long id;
-
+public class RegisterRequestDto {
     @NotBlank(message = "Username is required")
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
     private String username;
@@ -23,5 +24,6 @@ public class UserDto {
     @Email(message = "Email should be valid")
     private String email;
 
+    @NotBlank(message = "Password is required")
     private String password;
 }

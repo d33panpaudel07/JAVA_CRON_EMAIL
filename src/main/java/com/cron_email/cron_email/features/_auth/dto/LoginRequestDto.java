@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.auth.dto;
+package com.cron_email.cron_email.features._auth.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

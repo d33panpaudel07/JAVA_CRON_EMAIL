@@ -1,5 +1,6 @@
 package com.cron_email.cron_email._core.entity;
 
+import com.cron_email.cron_email.features._base.entity.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,17 +12,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Long id;
-
+public class User extends BaseEntity {
     @Column(name = "USERNAME")
     private String username;
 

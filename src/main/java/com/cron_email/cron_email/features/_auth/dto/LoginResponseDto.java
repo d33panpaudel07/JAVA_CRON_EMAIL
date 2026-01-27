@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.auth.dto;
+package com.cron_email.cron_email.features._auth.dto;
 
 import com.cron_email.cron_email._core.dto.RoleDto;
 import lombok.AllArgsConstructor;

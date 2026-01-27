@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.auth.service;
+package com.cron_email.cron_email.features._auth.service;
 
 import com.cron_email.cron_email._core.dto.GlobalResponse;
 import com.cron_email.cron_email._core.dto.RoleDto;
@@ -10,9 +10,9 @@ import com.cron_email.cron_email._core.exception.ResourceNotFoundException;
 import com.cron_email.cron_email._core.repository.RoleRepository;
 import com.cron_email.cron_email._core.repository.UserRepository;
 import com.cron_email.cron_email._security.JwtService;
-import com.cron_email.cron_email.features.auth.dto.LoginRequestDto;
-import com.cron_email.cron_email.features.auth.dto.LoginResponseDto;
-import com.cron_email.cron_email.features.auth.dto.RegisterRequestDto;
+import com.cron_email.cron_email.features._auth.dto.LoginRequestDto;
+import com.cron_email.cron_email.features._auth.dto.LoginResponseDto;
+import com.cron_email.cron_email.features._auth.dto.RegisterRequestDto;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

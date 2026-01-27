@@ -1,5 +1,6 @@
 package com.cron_email.cron_email._core.entity;
 
+import com.cron_email.cron_email.features._base.entity.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,12 +17,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Long id;
-
+public class Role extends BaseEntity {
     @Column(name = "NAME")
     private String name;
 
