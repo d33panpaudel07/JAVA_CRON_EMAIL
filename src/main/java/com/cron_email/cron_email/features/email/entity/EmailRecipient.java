@@ -1,5 +1,6 @@
 package com.cron_email.cron_email.features.email.entity;
 
+import com.cron_email.cron_email._core.enums.RecipientTypeEnum;
 import com.cron_email.cron_email.features._base.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class EmailRecipient extends BaseEntity {
     private String recipientName;
 
     @Column(name = "RECIPIENT_TYPE")
-    private String recipientType; // CC, BCC
+    @Enumerated(EnumType.STRING)
+    private RecipientTypeEnum recipientType;
 
 }
