@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public class BaseEntity<ID> implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    private ID id;
 
     @CreatedDate
     @Column(name = "CREATED_AT")

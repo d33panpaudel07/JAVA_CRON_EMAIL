@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EmailAttachment extends BaseEntity {
+public class EmailAttachment extends BaseEntity<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMAIL_JOB_ID")
@@ -26,6 +26,6 @@ public class EmailAttachment extends BaseEntity {
 
     @Column(name = "FILE_TYPE")
     @Enumerated(EnumType.STRING)
-    private FileTypeEnum status;
+    private FileTypeEnum fileType;
 
 }

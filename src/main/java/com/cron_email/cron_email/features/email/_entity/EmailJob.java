@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class EmailJob extends BaseEntity {
+public class EmailJob extends BaseEntity<Long> {
 
     @Column(name = "JOB_NAME")
     private String jobName;

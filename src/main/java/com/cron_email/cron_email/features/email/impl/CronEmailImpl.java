@@ -1,0 +1,78 @@
+package com.cron_email.cron_email.features.email.impl;
+
+import com.cron_email.cron_email._core.dto.GlobalResponse;
+import com.cron_email.cron_email.features.email._entity.EmailJob;
+import com.cron_email.cron_email.features.email.dto.ScheduleEmailDto;
+import com.cron_email.cron_email.features.email.dto.internalDto.EmailRecipientDto;
+import com.cron_email.cron_email.features.email.manager.EmailJobManager;
+import com.cron_email.cron_email.features.email.service.CronEmailService;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Slf4j
+@Service
+@AllArgsConstructor
+public class CronEmailImpl implements CronEmailService {
+
+    private final EmailJobManager emailJobManager;
+
+    @Override
+    public GlobalResponse<?> createScheduledEmail(ScheduleEmailDto dto) {
+
+
+
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> updateScheduledEmail(ScheduleEmailDto dto) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> enableScheduledEmailJob(Long jobId) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> disableScheduledEmailJob(Long jobId) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> getAllActiveJobs() {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> getRecipientsByJobId(Long jobId) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> addRecipientsToJob(Long jobId, List<EmailRecipientDto> recipients) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> removeRecipient(Long recipientId) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> getLogsByJobId(Long jobId) {
+        return null;
+    }
+
+    @Override
+    public GlobalResponse<?> getJobByJobId(Long jobId) {
+
+        EmailJob emailJob = emailJobManager.getJobById(jobId);
+
+//        EmailJobMapper
+        return null;
+    }
+}

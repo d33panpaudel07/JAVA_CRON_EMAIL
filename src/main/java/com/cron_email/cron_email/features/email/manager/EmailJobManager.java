@@ -1,37 +1,25 @@
 package com.cron_email.cron_email.features.email.manager;
 
-import com.cron_email.cron_email.features._template._repository.BaseRepository;
-import com.cron_email.cron_email.features._template.manager.AbstractBaseManager;
 import com.cron_email.cron_email.features.email._entity.EmailJob;
-import com.cron_email.cron_email.features.email._repository.EmailJobRepository;
+import com.cron_email.cron_email.features.email.repoHelper.EmailJobRepoHelper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Slf4j
-@Component
+@Service
 @AllArgsConstructor
-public class EmailJobManager extends AbstractBaseManager<EmailJob, Long> {
+public class EmailJobManager {
+    private final EmailJobRepoHelper emailJobRepoHelper;
 
-    private final EmailJobRepository repository;
-
-    @Override
-    protected BaseRepository<EmailJob, Long> getRepository() {
-        return repository;
-    }
-
-    @Override
-    protected void setActive(EmailJob entity, boolean active) {
-        entity.setIsActive(active ? 'Y' : 'N');
-    }
-
-    @Override
-    protected void displayMissingLog(Long id) {
-        log.warn("Email job with id {} not found", id);
-    }
-
-    @Override
-    protected String getEntityName() {
-        return "EmailJob";
+    public EmailJob getJobById(Long jobId) {
+        Optional<EmailJob> emailJobOpt = emailJobRepoHelper.findByIdAndStatus(jobId, 'Y');
+        if(emailJobOpt.isEmpty()){
+            log.error("EmailJob with id: {} not found", jobId);
+            throw new RuntimeException("EmailJob with id: " + jobId + " not found");
+        }
+        return emailJobOpt.get();
     }
 }

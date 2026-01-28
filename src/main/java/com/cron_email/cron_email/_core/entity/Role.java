@@ -17,7 +17,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Role extends BaseEntity {
+public class Role extends BaseEntity<Long> {
     @Column(name = "NAME")
     private String name;
 

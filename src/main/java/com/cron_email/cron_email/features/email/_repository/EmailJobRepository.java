@@ -2,7 +2,6 @@ package com.cron_email.cron_email.features.email._repository;
 
 import com.cron_email.cron_email.features._template._repository.BaseRepository;
 import com.cron_email.cron_email.features.email._entity.EmailJob;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 

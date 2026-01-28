@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features._template.manager;
+package com.cron_email.cron_email.features._template.repoHelper;
 
 import com.cron_email.cron_email._core.exception.ResourceNotFoundException;
 import com.cron_email.cron_email.features._template._repository.BaseRepository;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-public abstract class AbstractBaseManager<T, ID> {
+public abstract class AbstractBaseRepoHelper<T, ID> {
 
     protected abstract BaseRepository<T, ID> getRepository();
 
