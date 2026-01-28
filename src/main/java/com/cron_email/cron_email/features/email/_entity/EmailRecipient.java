@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.entity;
+package com.cron_email.cron_email.features.email._entity;
 
 import com.cron_email.cron_email._core.enums.RecipientTypeEnum;
 import com.cron_email.cron_email.features._base.entity.BaseEntity;
