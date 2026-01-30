@@ -1,16 +1,20 @@
 package com.cron_email.cron_email.features.email.impl;
 
+import com.cron_email.cron_email._core.constants.ResponseMessageConstants.*;
 import com.cron_email.cron_email._core.dto.GlobalResponse;
 import com.cron_email.cron_email.features.email._entity.EmailJob;
 import com.cron_email.cron_email.features.email.dto.ScheduleEmailDto;
 import com.cron_email.cron_email.features.email.dto.internalDto.EmailRecipientDto;
 import com.cron_email.cron_email.features.email.manager.EmailJobManager;
+import com.cron_email.cron_email.features.email.mapper.EmailJobMapper;
 import com.cron_email.cron_email.features.email.service.CronEmailService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import static com.cron_email.cron_email._core.constants.ResponseMessageConstants.SUCCESS;
 
 @Slf4j
 @Service
@@ -21,10 +25,11 @@ public class CronEmailImpl implements CronEmailService {
 
     @Override
     public GlobalResponse<?> createScheduledEmail(ScheduleEmailDto dto) {
+        EmailJob emailJob = EmailJobMapper.toEntity(dto, new EmailJob());
 
+        emailJob = emailJobManager.saveJob(emailJob);
 
-
-        return null;
+        return GlobalResponse.successResponse(SUCCESS, emailJob);
     }
 
     @Override
@@ -69,10 +74,10 @@ public class CronEmailImpl implements CronEmailService {
 
     @Override
     public GlobalResponse<?> getJobByJobId(Long jobId) {
-
         EmailJob emailJob = emailJobManager.getJobById(jobId);
 
-//        EmailJobMapper
-        return null;
+        EmailJobMapper.toDto(emailJob);
+
+        return GlobalResponse.successResponse(SUCCESS, emailJob);
     }
 }

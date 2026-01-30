@@ -22,4 +22,8 @@ public class EmailJobManager {
         }
         return emailJobOpt.get();
     }
+
+    public EmailJob saveJob(EmailJob emailJob) {
+        return emailJobRepoHelper.save(emailJob);
+    }
 }
