@@ -1,8 +1,7 @@
 package com.cron_email.cron_email.features.email.impl;
 
-import com.cron_email.cron_email._core.constants.ResponseMessageConstants.*;
-import com.cron_email.cron_email._core.dto.GlobalResponse;
-import com.cron_email.cron_email.features.email._entity.EmailJob;
+import com.cron_email.cron_email.core.dto.GlobalResponse;
+import com.cron_email.cron_email.features.email.entity.EmailJob;
 import com.cron_email.cron_email.features.email.dto.ScheduleEmailDto;
 import com.cron_email.cron_email.features.email.dto.internalDto.EmailRecipientDto;
 import com.cron_email.cron_email.features.email.manager.EmailJobManager;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.cron_email.cron_email._core.constants.ResponseMessageConstants.SUCCESS;
+import static com.cron_email.cron_email.core.constants.ResponseMessageConstants.SUCCESS;
 
 @Slf4j
 @Service

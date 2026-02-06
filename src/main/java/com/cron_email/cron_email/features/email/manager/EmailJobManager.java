@@ -1,6 +1,6 @@
 package com.cron_email.cron_email.features.email.manager;
 
-import com.cron_email.cron_email.features.email._entity.EmailJob;
+import com.cron_email.cron_email.features.email.entity.EmailJob;
 import com.cron_email.cron_email.features.email.repoHelper.EmailJobRepoHelper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

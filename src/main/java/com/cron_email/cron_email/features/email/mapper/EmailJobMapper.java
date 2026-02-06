@@ -1,7 +1,7 @@
 package com.cron_email.cron_email.features.email.mapper;
 
-import com.cron_email.cron_email.features._base.mapper.BaseMapper;
-import com.cron_email.cron_email.features.email._entity.EmailJob;
+import com.cron_email.cron_email.features.base.mapper.BaseMapper;
+import com.cron_email.cron_email.features.email.entity.EmailJob;
 import com.cron_email.cron_email.features.email.dto.ScheduleEmailDto;
 import lombok.extern.slf4j.Slf4j;
 
