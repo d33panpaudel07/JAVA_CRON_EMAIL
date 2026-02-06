@@ -1,8 +1,8 @@
 package com.cron_email.cron_email.features.email.mapper;
 
-import com.cron_email.cron_email._core.enums.RecipientTypeEnum;
-import com.cron_email.cron_email.features._base.mapper.BaseMapper;
-import com.cron_email.cron_email.features.email._entity.EmailRecipient;
+import com.cron_email.cron_email.core.enums.RecipientTypeEnum;
+import com.cron_email.cron_email.features.base.mapper.BaseMapper;
+import com.cron_email.cron_email.features.email.entity.EmailRecipient;
 import com.cron_email.cron_email.features.email.dto.internalDto.EmailRecipientDto;
 import lombok.extern.slf4j.Slf4j;
 

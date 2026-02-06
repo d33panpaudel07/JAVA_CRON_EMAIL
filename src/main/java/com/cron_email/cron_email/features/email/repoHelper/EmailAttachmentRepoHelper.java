@@ -1,9 +1,9 @@
 package com.cron_email.cron_email.features.email.repoHelper;
 
-import com.cron_email.cron_email.features._template._repository.BaseRepository;
-import com.cron_email.cron_email.features._template.repoHelper.AbstractBaseRepoHelper;
-import com.cron_email.cron_email.features.email._entity.EmailAttachment;
-import com.cron_email.cron_email.features.email._repository.EmailAttachmentRepository;
+import com.cron_email.cron_email.features.template.repository.BaseRepository;
+import com.cron_email.cron_email.features.template.repoHelper.AbstractBaseRepoHelper;
+import com.cron_email.cron_email.features.email.entity.EmailAttachment;
+import com.cron_email.cron_email.features.email.repository.EmailAttachmentRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
