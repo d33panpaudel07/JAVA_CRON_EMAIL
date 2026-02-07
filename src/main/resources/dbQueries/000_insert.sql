@@ -8,6 +8,9 @@ values ('ADMIN')
 insert into ROLES (NAME)
 values ('USER')
 
+insert into ROLES (NAME)
+values ('CUSTOMER')
+
 -- USERS
 insert into USERS (EMAIL, PASSWORD, USERNAME)
 VALUES ('superAdmin@gmail.com', 'admin1234', 'SUPER_ADMIN')

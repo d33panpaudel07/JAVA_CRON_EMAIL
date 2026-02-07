@@ -1,7 +1,7 @@
 package com.cron_email.cron_email.features.email.repository;
 
-import com.cron_email.cron_email.features.template.repository.BaseRepository;
 import com.cron_email.cron_email.features.email.entity.EmailAttachment;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface EmailAttachmentRepository extends BaseRepository<EmailAttachment, Long> {
-    @Query("SELECT ea FROM EmailAttachment ea WHERE ea.isActive = :y")
-    Optional<EmailAttachment> findByIdAndStatus(Long id, char y);
+public interface EmailAttachmentRepository extends JpaRepository<EmailAttachment, Long> {
+    @Query("SELECT ea FROM EmailAttachment ea WHERE ea.isActive = :status")
+    Optional<EmailAttachment> findByIdAndStatus(Long id, char status);
 
-    @Query("SELECT ea FROM EmailAttachment ea WHERE ea.isActive = :y AND ea.id IN :list")
-    List<EmailAttachment> findAllByStatusAndIdsList(char y, List<Long> list);
+    @Query("SELECT ea FROM EmailAttachment ea WHERE ea.isActive = :status AND ea.id IN :list")
+    List<EmailAttachment> findAllByStatusAndIdsList(char status, List<Long> list);
 }
