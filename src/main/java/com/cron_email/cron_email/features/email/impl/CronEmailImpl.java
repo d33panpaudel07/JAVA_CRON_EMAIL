@@ -73,6 +73,8 @@ public class CronEmailImpl implements CronEmailService {
 
     @Override
     public GlobalResponse<?> getJobByJobId(Long jobId) {
+        //aop for automatic logging request and response
+
         EmailJob emailJob = emailJobManager.getJobById(jobId);
 
         EmailJobMapper.toDto(emailJob);

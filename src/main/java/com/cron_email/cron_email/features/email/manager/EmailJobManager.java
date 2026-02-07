@@ -1,5 +1,6 @@
 package com.cron_email.cron_email.features.email.manager;
 
+import com.cron_email.cron_email.core.exception.ResourceNotFoundException;
 import com.cron_email.cron_email.features.email.entity.EmailJob;
 import com.cron_email.cron_email.features.email.repoHelper.EmailJobRepoHelper;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class EmailJobManager {
         Optional<EmailJob> emailJobOpt = emailJobRepoHelper.findByIdAndStatus(jobId, 'Y');
         if(emailJobOpt.isEmpty()){
             log.error("EmailJob with id: {} not found", jobId);
-            throw new RuntimeException("EmailJob with id: " + jobId + " not found");
+            throw new ResourceNotFoundException("EmailJob with id: " + jobId + " not found");
         }
         return emailJobOpt.get();
     }
