@@ -1,7 +1,9 @@
 package com.cron_email.cron_email.security;
 
+import com.cron_email.cron_email.core.entity.Role;
 import com.cron_email.cron_email.core.entity.User;
 import com.cron_email.cron_email.core.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -21,6 +23,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    @Transactional
     @Override
     public @NonNull UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username)

@@ -15,7 +15,7 @@ import lombok.Setter;
 public class EmailAttachment extends BaseEntity<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMAIL_JOB_ID")
+    @JoinColumn(name = "EMAIL_JOB_ID", nullable = false)
     private EmailJob emailJob;
 
     @Column(name = "FILE_NAME")

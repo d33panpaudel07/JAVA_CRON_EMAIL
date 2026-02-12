@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 public class EmailJobMapper {
     public static EmailJob toEntity(ScheduleEmailDto scheduleEmailDto, EmailJob emailJob) {
         if (scheduleEmailDto == null) {
-            log.warn("ScheduleEmailDto is null");
+            log.warn("ScheduleEmailDto is null, conversion to entity failed");
             return null;
         }
 
@@ -22,9 +22,10 @@ public class EmailJobMapper {
 
         return emailJob;
     }
+
     public static ScheduleEmailDto toDto(EmailJob emailJob) {
         if (emailJob == null) {
-            log.warn("ScheduleEmailDto is null");
+            log.warn("ScheduleEmailDto is null, conversion to dto failed");
             return null;
         }
 

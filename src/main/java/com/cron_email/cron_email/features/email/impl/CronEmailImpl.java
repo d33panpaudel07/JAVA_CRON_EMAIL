@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.cron_email.cron_email.core.constants.ResponseMessageConstants.SUCCESS;
+import static com.cron_email.cron_email.core.constants.ResponseConstants.SUCCESS;
 
 @Slf4j
 @Service
@@ -77,8 +77,8 @@ public class CronEmailImpl implements CronEmailService {
 
         EmailJob emailJob = emailJobManager.getJobById(jobId);
 
-        EmailJobMapper.toDto(emailJob);
+        ScheduleEmailDto emailJobDto = EmailJobMapper.toDto(emailJob);
 
-        return GlobalResponse.successResponse(SUCCESS, emailJob);
+        return GlobalResponse.successResponse(SUCCESS, emailJobDto);
     }
 }
