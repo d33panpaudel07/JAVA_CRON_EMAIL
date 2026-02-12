@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.dto.internalDto;
+package com.cron_email.cron_email.features.emailJob.dto.internalDto;
 
 import com.cron_email.cron_email.features.base.dto.BaseDto;
 import lombok.Getter;

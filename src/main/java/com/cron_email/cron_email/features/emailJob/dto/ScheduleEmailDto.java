@@ -1,7 +1,7 @@
-package com.cron_email.cron_email.features.email.dto;
+package com.cron_email.cron_email.features.emailJob.dto;
 
 import com.cron_email.cron_email.features.base.dto.BaseDto;
-import com.cron_email.cron_email.features.email.dto.internalDto.EmailRecipientDto;
+import com.cron_email.cron_email.features.emailJob.dto.internalDto.EmailRecipientDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

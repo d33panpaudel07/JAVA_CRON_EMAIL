@@ -2,8 +2,8 @@ package com.cron_email.cron_email.features.email.controller;
 
 import com.cron_email.cron_email.core.dto.GlobalResponse;
 import com.cron_email.cron_email.core.dto.ServerResponse;
-import com.cron_email.cron_email.core.features.email.dto.EmailDetails;
-import com.cron_email.cron_email.core.features.email.service.EmailService;
+import com.cron_email.cron_email.features.email.dto.EmailDetails;
+import com.cron_email.cron_email.features.email.service.EmailService;
 import com.cron_email.cron_email.features.email.service.CronEmailService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

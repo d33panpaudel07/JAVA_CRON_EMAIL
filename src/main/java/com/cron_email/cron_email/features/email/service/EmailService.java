@@ -1,7 +1,7 @@
-package com.cron_email.cron_email.core.features.email.service;
+package com.cron_email.cron_email.features.email.service;
 
 import com.cron_email.cron_email.core.dto.ServerResponse;
-import com.cron_email.cron_email.core.features.email.dto.EmailDetails;
+import com.cron_email.cron_email.features.email.dto.EmailDetails;
 
 /**
  * ░█▀▄░▀▀█░▀▀█░█▀█░█▀█░█▀█

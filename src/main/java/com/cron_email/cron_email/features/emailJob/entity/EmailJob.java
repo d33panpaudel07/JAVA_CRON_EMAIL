@@ -1,14 +1,15 @@
-package com.cron_email.cron_email.features.email.entity;
+package com.cron_email.cron_email.features.emailJob.entity;
 
 import com.cron_email.cron_email.features.base.entity.BaseEntity;
+import com.cron_email.cron_email.features.emailAttachment.entity.EmailAttachment;
+import com.cron_email.cron_email.features.emailLog.entity.EmailLog;
+import com.cron_email.cron_email.features.emailRecipient.entity.EmailRecipient;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "EMAIL_JOB")

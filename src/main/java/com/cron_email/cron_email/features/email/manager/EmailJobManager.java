@@ -1,7 +1,7 @@
 package com.cron_email.cron_email.features.email.manager;
 
 import com.cron_email.cron_email.core.exception.ResourceNotFoundException;
-import com.cron_email.cron_email.features.email.entity.EmailJob;
+import com.cron_email.cron_email.features.emailJob.entity.EmailJob;
 import com.cron_email.cron_email.features.email.repository.EmailJobRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

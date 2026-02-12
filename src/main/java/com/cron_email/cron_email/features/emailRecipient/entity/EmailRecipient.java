@@ -1,7 +1,8 @@
-package com.cron_email.cron_email.features.email.entity;
+package com.cron_email.cron_email.features.emailRecipient.entity;
 
 import com.cron_email.cron_email.core.enums.RecipientTypeEnum;
 import com.cron_email.cron_email.features.base.entity.BaseEntity;
+import com.cron_email.cron_email.features.emailJob.entity.EmailJob;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

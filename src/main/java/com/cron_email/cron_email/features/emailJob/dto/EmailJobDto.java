@@ -1,5 +1,6 @@
-package com.cron_email.cron_email.features.email.dto;
+package com.cron_email.cron_email.features.emailJob.dto;
 
+import com.cron_email.cron_email.features.emailAttachment.dto.EmailAttachmentDto;
 import lombok.Getter;
 import lombok.Setter;
 

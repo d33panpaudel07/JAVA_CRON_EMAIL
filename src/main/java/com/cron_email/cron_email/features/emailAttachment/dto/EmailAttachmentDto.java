@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.dto;
+package com.cron_email.cron_email.features.emailAttachment.dto;
 
 import com.cron_email.cron_email.core.enums.FileTypeEnum;
 
