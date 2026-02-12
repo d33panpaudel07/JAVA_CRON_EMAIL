@@ -13,7 +13,7 @@ public class BaseDto<ID> {
     private ID id;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private String createdBy;
-    private String updatedBy;
+    private Long createdById;
+    private Long updatedById;
     private Character isActive;
 }

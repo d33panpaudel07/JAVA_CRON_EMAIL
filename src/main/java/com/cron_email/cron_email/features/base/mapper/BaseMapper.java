@@ -27,12 +27,12 @@ public class BaseMapper {
             entity.setUpdatedAt(dto.getUpdatedAt());
         }
 
-        if (dto.getCreatedBy() != null) {
-            entity.setCreatedBy(dto.getCreatedBy());
+        if (dto.getCreatedById() != null) {
+            entity.setCreatedById(dto.getCreatedById());
         }
 
-        if (dto.getUpdatedBy() != null) {
-            entity.setUpdatedBy(dto.getUpdatedBy());
+        if (dto.getUpdatedById() != null) {
+            entity.setUpdatedById(dto.getUpdatedById());
         }
 
         if (dto.getIsActive() != null) {
@@ -58,12 +58,12 @@ public class BaseMapper {
             dto.setUpdatedAt(entity.getUpdatedAt());
         }
 
-        if (entity.getCreatedBy() != null) {
-            dto.setCreatedBy(entity.getCreatedBy());
+        if (entity.getCreatedById() != null) {
+            dto.setCreatedById(entity.getCreatedById());
         }
 
-        if (entity.getUpdatedBy() != null) {
-            dto.setUpdatedBy(entity.getUpdatedBy());
+        if (entity.getUpdatedById() != null) {
+            dto.setUpdatedById(entity.getUpdatedById());
         }
 
         if (entity.getIsActive() != null) {

@@ -1,7 +1,7 @@
 package com.cron_email.cron_email.features.email.controller;
 
 import com.cron_email.cron_email.core.dto.GlobalResponse;
-import com.cron_email.cron_email.core.dto.ServerResponse;
+import com.cron_email.cron_email.core.dto.InternalResponse;
 import com.cron_email.cron_email.features.email.dto.EmailDetails;
 import com.cron_email.cron_email.features.email.service.EmailService;
 import com.cron_email.cron_email.features.email.service.CronEmailService;
@@ -34,13 +34,13 @@ public class EmailController {
 
         // todo: d33pan, need to change dto from EmailDetails to EmailJobDto
 
-        ServerResponse<?> serverResponse = emailService.sendEmail(details);
-        return ResponseEntity.ok(serverResponse);
+        InternalResponse<?> internalResponse = emailService.sendEmail(details);
+        return ResponseEntity.ok(internalResponse);
     }
 
     @PostMapping("/sendMailWithAttachment")
     public ResponseEntity<?> sendMailWithAttachment(@RequestBody EmailDetails details) {
-        ServerResponse<?> serverResponse = emailService.sendEmailWithAttachment(details);
-        return ResponseEntity.ok(serverResponse);
+        InternalResponse<?> internalResponse = emailService.sendEmailWithAttachment(details);
+        return ResponseEntity.ok(internalResponse);
     }
 }

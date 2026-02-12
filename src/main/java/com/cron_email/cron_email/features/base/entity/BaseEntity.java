@@ -30,11 +30,11 @@ public class BaseEntity<ID> implements Serializable {
 
     @CreatedBy
     @Column(name = "CREATED_BY_ID")
-    private String createdBy;
+    private Long createdById;
 
     @LastModifiedBy
     @Column(name = "UPDATED_BY_ID")
-    private String updatedBy;
+    private Long updatedById;
 
     @Column(name = "IS_ACTIVE")
     private Character isActive = 'Y';

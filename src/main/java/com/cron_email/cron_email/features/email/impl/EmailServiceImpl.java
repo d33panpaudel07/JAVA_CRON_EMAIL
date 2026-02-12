@@ -1,6 +1,6 @@
 package com.cron_email.cron_email.features.email.impl;
 
-import com.cron_email.cron_email.core.dto.ServerResponse;
+import com.cron_email.cron_email.core.dto.InternalResponse;
 import com.cron_email.cron_email.features.email.dto.EmailDetails;
 import com.cron_email.cron_email.features.email.service.EmailService;
 import jakarta.mail.MessagingException;
@@ -36,7 +36,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public ServerResponse<?> sendEmail(EmailDetails emailDetails) {
+    public InternalResponse<?> sendEmail(EmailDetails emailDetails) {
         log.info("Sending email to {}", emailDetails.getRecipient());
         try {
             SimpleMailMessage mailMessage
@@ -48,16 +48,16 @@ public class EmailServiceImpl implements EmailService {
             mailMessage.setSubject(emailDetails.getSubject());
 
             javaMailSender.send(mailMessage);
-            return ServerResponse.successResponse(true);
+            return InternalResponse.successResponse(true);
         } catch (Exception e) {
             log.error("Error while sending email\n Message: {}", e.getMessage());
-            return ServerResponse.errorResponse(e.getMessage(), false);
+            return InternalResponse.errorResponse(e.getMessage(), false);
         }
 
     }
 
     @Override
-    public ServerResponse<?> sendEmailWithAttachment(EmailDetails emailDetails) {
+    public InternalResponse<?> sendEmailWithAttachment(EmailDetails emailDetails) {
         log.info("Sending email with attachment to {}", emailDetails.getRecipient());
         MimeMessage mimeMessage
                 = javaMailSender.createMimeMessage();
@@ -80,12 +80,12 @@ public class EmailServiceImpl implements EmailService {
                     file.getFilename(), file);
 
             javaMailSender.send(mimeMessage);
-            return ServerResponse.successResponse(true);
+            return InternalResponse.successResponse(true);
         }
 
         catch (MessagingException e) {
             log.error("Error while sending email with attachment \n Message: {}", e.getMessage());
-            return ServerResponse.errorResponse(true);
+            return InternalResponse.errorResponse(true);
         }
     }
 }
