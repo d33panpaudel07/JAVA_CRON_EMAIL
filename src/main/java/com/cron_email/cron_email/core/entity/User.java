@@ -27,6 +27,15 @@ public class User extends BaseEntity<Long> {
     @Column(name = "PASSWORD")
     private String password;
 
+    @Column(name = "IS_ACCOUNT_EXPIRED")
+    private Character isAccountExpired;
+
+    @Column(name = "IS_CREDENTIAL_EXPIRED")
+    private Character isCredentialExpired;
+
+    @Column(name = "IS_LOCKED")
+    private Character isLocked;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "USER_ROLES",
@@ -35,6 +44,7 @@ public class User extends BaseEntity<Long> {
     )
     @JsonManagedReference
     private Set<Role> roles = new HashSet<>();
+
 
 }
 

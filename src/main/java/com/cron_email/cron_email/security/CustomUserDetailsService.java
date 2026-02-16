@@ -1,6 +1,5 @@
 package com.cron_email.cron_email.security;
 
-import com.cron_email.cron_email.core.entity.Role;
 import com.cron_email.cron_email.core.entity.User;
 import com.cron_email.cron_email.core.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -34,10 +33,12 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
 
-        return org.springframework.security.core.userdetails.User
-                .withUsername(user.getUsername())
-                .password(user.getPassword()) // already encoded
-                .authorities(authorities) // simple role
-                .build();
+//        return org.springframework.security.core.userdetails.User
+//                .withUsername(user.getUsername())
+//                .password(user.getPassword()) // already encoded
+//                .authorities(authorities) // simple role
+//                .build();
+
+        return new CustomUserPrincipal(user, authorities);
     }
 }
