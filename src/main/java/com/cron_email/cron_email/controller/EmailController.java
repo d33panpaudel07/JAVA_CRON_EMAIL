@@ -1,18 +1,16 @@
-package com.cron_email.cron_email.features.email.controller;
+package com.cron_email.cron_email.controller;
 
 import com.cron_email.cron_email.core.dto.GlobalResponse;
 import com.cron_email.cron_email.core.dto.InternalResponse;
-import com.cron_email.cron_email.features.email.dto.EmailDetails;
+import com.cron_email.cron_email.features.email.dto.EmailDetailsDto;
 import com.cron_email.cron_email.features.email.service.EmailService;
 import com.cron_email.cron_email.features.email.service.CronEmailService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static com.cron_email.cron_email.core.constants.ControllerConstants.READ_BY_ID;
 
-@Slf4j
 @RestController
 @RequestMapping("/v1/email")
 @AllArgsConstructor
@@ -25,21 +23,20 @@ public class EmailController {
 
     @GetMapping(READ_BY_ID + "/{jobId}")
     public GlobalResponse<?> getById(@PathVariable Long jobId) {
-        log.info("Fetching logs by jobId: {}", jobId);
         return cronEmailService.getJobByJobId(jobId);
     }
 
     @PostMapping("/sendMail")
-    public ResponseEntity<?> sendMail(@RequestBody EmailDetails details) {
+    public ResponseEntity<?> sendMail(@RequestBody EmailDetailsDto details) {
 
-        // todo: d33pan, need to change dto from EmailDetails to EmailJobDto
+        // todo: d33pan, need to change dto from EmailDetailsDto to EmailJobDto
 
         InternalResponse<?> internalResponse = emailService.sendEmail(details);
         return ResponseEntity.ok(internalResponse);
     }
 
     @PostMapping("/sendMailWithAttachment")
-    public ResponseEntity<?> sendMailWithAttachment(@RequestBody EmailDetails details) {
+    public ResponseEntity<?> sendMailWithAttachment(@RequestBody EmailDetailsDto details) {
         InternalResponse<?> internalResponse = emailService.sendEmailWithAttachment(details);
         return ResponseEntity.ok(internalResponse);
     }

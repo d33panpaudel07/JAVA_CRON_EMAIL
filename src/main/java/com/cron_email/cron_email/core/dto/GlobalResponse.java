@@ -19,6 +19,10 @@ public class GlobalResponse<T> {
         return new GlobalResponse<>(true, message, data);
     }
 
+    public static <T> GlobalResponse<T> successResponse(InternalResponse<T> internalResponse) {
+        return new GlobalResponse<>(internalResponse.isSuccess(), internalResponse.getMessage(), internalResponse.getData());
+    }
+
     public static <T> GlobalResponse<T> successResponse(String message) {
         return new GlobalResponse<>(true, message, null);
     }

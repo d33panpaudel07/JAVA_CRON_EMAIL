@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.auth.controller;
+package com.cron_email.cron_email.controller;
 
 import com.cron_email.cron_email.features.auth.dto.LoginRequestDto;
 import com.cron_email.cron_email.features.auth.dto.RegisterRequestDto;

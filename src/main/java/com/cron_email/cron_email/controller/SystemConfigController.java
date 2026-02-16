@@ -25,25 +25,25 @@ public class SystemConfigController {
     @GetMapping(ControllerConstants.READ_BY_ID + "/{id}")
     public GlobalResponse<?> getSystemConfigById(@PathVariable Long id){
         InternalResponse<?> response = systemConfigService.getSystemConfigById(id);
-        return GlobalResponse.successResponse(response.getMessage(), response.getData());
+        return GlobalResponse.successResponse(response);
     }
 
     @GetMapping(ControllerConstants.READ_ALL)
     public GlobalResponse<?> getAllSystemConfig(){
         InternalResponse<?> response = systemConfigService.getAllSystemConfigs();
-        return GlobalResponse.successResponse(response.getMessage(), response.getData());
+        return GlobalResponse.successResponse(response);
     }
 
     @PostMapping(ControllerConstants.CREATE)
     public GlobalResponse<?> getAllSystemConfig(SystemConfigDto systemConfigDto){
         InternalResponse<?> response = systemConfigService.createSystemConfig(systemConfigDto);
-        return GlobalResponse.successResponse(response.getMessage(), response.getData());
+        return GlobalResponse.successResponse(response);
     }
 
     @PostMapping(ControllerConstants.UPDATE + "/{id}")
     public GlobalResponse<?> updateSystemConfig(Long id, SystemConfigDto systemConfigDto){
         InternalResponse<?> response = systemConfigService.updateSystemConfig(id, systemConfigDto);
-        return GlobalResponse.successResponse(response.getMessage(), response.getData());
+        return GlobalResponse.successResponse(response);
     }
 
 }
