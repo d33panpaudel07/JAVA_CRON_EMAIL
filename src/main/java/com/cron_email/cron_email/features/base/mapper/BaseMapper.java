@@ -4,6 +4,8 @@ import com.cron_email.cron_email.features.base.dto.BaseDto;
 import com.cron_email.cron_email.features.base.entity.BaseEntity;
 import lombok.extern.slf4j.Slf4j;
 
+// todo: scrap this whole file as auditing may get updated unintentionally
+
 /**
  * E -> Entity
  * D -> DTO
