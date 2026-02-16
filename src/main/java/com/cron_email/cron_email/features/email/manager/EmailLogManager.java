@@ -1,6 +1,6 @@
 package com.cron_email.cron_email.features.email.manager;
 
-import com.cron_email.cron_email.features.email.repository.EmailLogRepository;
+import com.cron_email.cron_email.features.emailLog.repository.EmailLogRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

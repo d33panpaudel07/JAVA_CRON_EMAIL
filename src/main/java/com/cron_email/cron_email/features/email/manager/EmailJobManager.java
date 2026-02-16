@@ -2,7 +2,7 @@ package com.cron_email.cron_email.features.email.manager;
 
 import com.cron_email.cron_email.core.exception.ResourceNotFoundException;
 import com.cron_email.cron_email.features.emailJob.entity.EmailJob;
-import com.cron_email.cron_email.features.email.repository.EmailJobRepository;
+import com.cron_email.cron_email.features.emailJob.repository.EmailJobRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.cron_email.cron_email.features.email.impl;
 
 import com.cron_email.cron_email.core.dto.InternalResponse;
-import com.cron_email.cron_email.features.email.dto.EmailDetails;
+import com.cron_email.cron_email.features.email.dto.EmailDetailsDto;
 import com.cron_email.cron_email.features.email.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -36,16 +36,16 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public InternalResponse<?> sendEmail(EmailDetails emailDetails) {
-        log.info("Sending email to {}", emailDetails.getRecipient());
+    public InternalResponse<?> sendEmail(EmailDetailsDto emailDetailsDto) {
+        log.info("Sending email to {}", emailDetailsDto.getRecipient());
         try {
             SimpleMailMessage mailMessage
                     = new SimpleMailMessage();
 
             mailMessage.setFrom(senderEmail);
-            mailMessage.setTo(emailDetails.getRecipient());
-            mailMessage.setText(emailDetails.getMsgBody());
-            mailMessage.setSubject(emailDetails.getSubject());
+            mailMessage.setTo(emailDetailsDto.getRecipient());
+            mailMessage.setText(emailDetailsDto.getMsgBody());
+            mailMessage.setSubject(emailDetailsDto.getSubject());
 
             javaMailSender.send(mailMessage);
             return InternalResponse.successResponse(true);
@@ -57,8 +57,8 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public InternalResponse<?> sendEmailWithAttachment(EmailDetails emailDetails) {
-        log.info("Sending email with attachment to {}", emailDetails.getRecipient());
+    public InternalResponse<?> sendEmailWithAttachment(EmailDetailsDto emailDetailsDto) {
+        log.info("Sending email with attachment to {}", emailDetailsDto.getRecipient());
         MimeMessage mimeMessage
                 = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper;
@@ -67,14 +67,14 @@ public class EmailServiceImpl implements EmailService {
             mimeMessageHelper
                     = new MimeMessageHelper(mimeMessage, true);
             mimeMessageHelper.setFrom(senderEmail);
-            mimeMessageHelper.setTo(emailDetails.getRecipient());
-            mimeMessageHelper.setText(emailDetails.getMsgBody());
+            mimeMessageHelper.setTo(emailDetailsDto.getRecipient());
+            mimeMessageHelper.setText(emailDetailsDto.getMsgBody());
             mimeMessageHelper.setSubject(
-                    emailDetails.getSubject());
+                    emailDetailsDto.getSubject());
 
             FileSystemResource file
                     = new FileSystemResource(
-                    new File(emailDetails.getAttachment()));
+                    new File(emailDetailsDto.getAttachment()));
 
             mimeMessageHelper.addAttachment(
                     file.getFilename(), file);

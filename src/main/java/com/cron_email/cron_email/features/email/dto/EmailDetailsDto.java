@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class EmailDetails {
+public class EmailDetailsDto {
     private String recipient;
     private String msgBody;
     private String subject;
