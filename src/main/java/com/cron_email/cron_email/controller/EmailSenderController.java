@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * @author d33pan on 2/16/2026
  */
 @RestController
-@RequestMapping("/v1/email")
+@RequestMapping("/v1/email-sender")
 @AllArgsConstructor
 public class EmailSenderController {
 

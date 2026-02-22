@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface EmailAttachmentRepository extends JpaRepository<EmailAttachment, Long> {
-    @Query("SELECT ea FROM EmailAttachment ea WHERE ea.isActive = :status")
+    @Query("SELECT ea FROM EmailAttachment ea WHERE ea.id = :id AND ea.isActive = :status")
     Optional<EmailAttachment> findByIdAndStatus(Long id, char status);
 
     @Query("SELECT ea FROM EmailAttachment ea WHERE ea.isActive = :status AND ea.id IN :list")

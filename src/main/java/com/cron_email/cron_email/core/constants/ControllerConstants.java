@@ -14,9 +14,9 @@ public class ControllerConstants {
     /*
      * Rare CRUD
      * */
-    public static final String CREATE_LIST = "create";
+    public static final String CREATE_LIST = "create-list";
     public static final String UPDATE_LIST = "update-by-list";
-    public static final String DELETE_LIST = "update-by-list";
+    public static final String DELETE_LIST = "delete-by-list";
     public static final String READ_ALL_BY_ID = "read-all-by-id";
 
     /*

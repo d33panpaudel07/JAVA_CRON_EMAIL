@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface EmailRecipientRepository extends JpaRepository<EmailRecipient, Long> {
-    @Query("SELECT ea FROM EmailRecipient ea WHERE ea.isActive = :status")
+    @Query("SELECT ea FROM EmailRecipient ea WHERE ea.id = :id AND ea.isActive = :status")
     Optional<EmailRecipient> findByIdAndStatus(Long id, char status);
 
     @Query("SELECT ea FROM EmailRecipient ea WHERE ea.isActive = :status AND ea.id IN :list")

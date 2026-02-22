@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface EmailJobRepository extends JpaRepository<EmailJob, Long> {
-    @Query("SELECT ea FROM EmailJob ea WHERE ea.isActive = :y")
+    @Query("SELECT ea FROM EmailJob ea WHERE ea.id = :id AND ea.isActive = :y")
     Optional<EmailJob> findByIdAndStatus(Long id, char y);
 
     @Query("SELECT ea FROM EmailJob ea WHERE ea.isActive = :y AND ea.id IN :list")
