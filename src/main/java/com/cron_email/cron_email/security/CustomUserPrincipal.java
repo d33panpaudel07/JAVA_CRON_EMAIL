@@ -1,15 +1,14 @@
 package com.cron_email.cron_email.security;
 
 import com.cron_email.cron_email.core.entity.User;
+import jakarta.annotation.Nullable;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * ░█▀▄░▀▀█░▀▀█░█▀█░█▀█░█▀█
