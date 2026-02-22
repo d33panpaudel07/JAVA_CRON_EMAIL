@@ -31,7 +31,6 @@ public class EmailBatch extends BaseEntity<Long> {
     )
     private List<EmailJob> emailJobs;
 
-    @OneToMany(mappedBy = "emailJob", fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMAIL_BATCH_ID")
+    @OneToMany(mappedBy = "emailBatch", fetch = FetchType.LAZY)
     private List<EmailRecipient> emailRecipients;
 }
