@@ -1,5 +1,7 @@
 package com.cron_email.cron_email.security;
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,22 +46,30 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         }
 
         jwt = authHeader.substring(7);
-        username = jwtService.extractUsername(jwt);
 
-        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+        try {
+            username = jwtService.extractUsername(jwt);
 
-            if (jwtService.isTokenValid(jwt, userDetails.getUsername())) {
-                UsernamePasswordAuthenticationToken authToken =
-                        new UsernamePasswordAuthenticationToken(
-                                userDetails,
-                                null,
-                                userDetails.getAuthorities()
-                        );
+            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 
-                SecurityContextHolder.getContext().setAuthentication(authToken);
+                if (jwtService.isTokenValid(jwt, userDetails.getUsername())) {
+                    UsernamePasswordAuthenticationToken authToken =
+                            new UsernamePasswordAuthenticationToken(
+                                    userDetails,
+                                    null,
+                                    userDetails.getAuthorities()
+                            );
+
+                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                }
             }
+            filterChain.doFilter(request, response);
+
+        } catch (ExpiredJwtException e) {
+            logger.debug("Expired JWT token");
+        } catch (JwtException e) {
+            logger.debug("Invalid JWT token");
         }
-        filterChain.doFilter(request, response);
     }
 }
