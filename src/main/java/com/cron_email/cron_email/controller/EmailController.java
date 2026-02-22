@@ -21,7 +21,7 @@ public class EmailController {
     // todo: d33pan, replace email service with CronEmailService which utilizes this service below to do work
     private final EmailService emailService;
 
-    @GetMapping(READ_BY_ID + "/{jobId}")
+    @GetMapping(READ_BY_ID + "/job/{jobId}")
     public GlobalResponse<?> getById(@PathVariable Long jobId) {
         return cronEmailService.getJobByJobId(jobId);
     }

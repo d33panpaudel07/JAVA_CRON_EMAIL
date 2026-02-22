@@ -42,6 +42,9 @@ public class AuthenticationService {
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        user.setIsAccountExpired('N');
+        user.setIsLocked('N');
+        user.setIsCredentialExpired('N');
 
         String roleName = "USER";
         Optional<Role> role = roleRepository.findByName(roleName);

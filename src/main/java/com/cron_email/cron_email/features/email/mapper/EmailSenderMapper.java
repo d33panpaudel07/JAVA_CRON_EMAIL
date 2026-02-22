@@ -42,6 +42,7 @@ public class EmailSenderMapper {
         dto.setSmtpHost(entity.getSmtpHost());
         dto.setSmtpPort(entity.getSmtpPort());
         dto.setIsTlsEnabled(entity.getIsTlsEnabled());
+        dto.setId(entity.getId());
 
         return dto;
     }

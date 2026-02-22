@@ -33,13 +33,13 @@ public class EmailSenderController {
     }
 
     @PostMapping(ControllerConstants.CREATE)
-    public GlobalResponse<?> getAllSystemConfig(EmailSenderDto emailSenderDto){
+    public GlobalResponse<?> getAllSystemConfig(@RequestBody EmailSenderDto emailSenderDto){
         InternalResponse<?> response = emailSenderService.createEmailSender(emailSenderDto);
         return GlobalResponse.successResponse(response);
     }
 
     @PutMapping(ControllerConstants.UPDATE + "/{id}")
-    public GlobalResponse<?> updateSystemConfig(@PathVariable Long id, EmailSenderDto emailSenderDto){
+    public GlobalResponse<?> updateSystemConfig(@PathVariable Long id, @RequestBody EmailSenderDto emailSenderDto){
         InternalResponse<?> response = emailSenderService.updateEmailSender(id, emailSenderDto);
         return GlobalResponse.successResponse(response);
     }

@@ -46,7 +46,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
     public InternalResponse<?> readEmailSenderById(Long id) {
         Optional<EmailSender> emailSenderOpt = emailSenderRepo.getByIdAndStatus(id, 'Y');
 
-        if(emailSenderOpt.isEmpty()) {
+        if (emailSenderOpt.isEmpty()) {
             log.error("EmailSender with id {} not found!", id);
             throw new ResourceNotFoundException("EmailSender with id " + id + " not found!");
         }
@@ -61,7 +61,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
         List<EmailSender> emailSendersList = emailSenderRepo.getAllByStatus('Y');
 
         List<EmailSenderDto> emailSenderDtoList = emailSendersList.stream()
-                .map(emailSender->EmailSenderMapper.toDto(emailSender, new EmailSenderDto()))
+                .map(emailSender -> EmailSenderMapper.toDto(emailSender, new EmailSenderDto()))
                 .toList();
 
         return InternalResponse.successResponse("EmailSenders fetched successfully!", emailSenderDtoList);
@@ -72,13 +72,15 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
         Optional<EmailSender> emailSenderOpt = emailSenderRepo.getByIdAndStatus(id, 'Y');
 
-        if(emailSenderOpt.isEmpty()){
+        if (emailSenderOpt.isEmpty()) {
             log.error("EmailSender with id {} not found!", emailSenderDto.getId());
             throw new ResourceNotFoundException("No Active EmailSender with id " + emailSenderDto.getId() + " was found!");
         }
 
         EmailSender emailSender = emailSenderOpt.get();
         EmailSenderMapper.toEntity(emailSenderDto, emailSender);
+        emailSenderRepo.save(emailSender);
+
         EmailSenderMapper.toDto(emailSender, new EmailSenderDto());
 
         return InternalResponse.successResponse("EmailSender updated successfully!", emailSender);
@@ -88,7 +90,7 @@ public class EmailSenderServiceImpl implements EmailSenderService {
     public InternalResponse<?> disableEmailSender(Long id) {
         Optional<EmailSender> emailSenderOpt = emailSenderRepo.getByIdAndStatus(id, 'Y');
 
-        if(emailSenderOpt.isEmpty()){
+        if (emailSenderOpt.isEmpty()) {
             log.error("EmailSender with id {} not found!", id);
             throw new ResourceNotFoundException("No Active EmailSender with id " + id + " was found!");
         }
@@ -99,6 +101,6 @@ public class EmailSenderServiceImpl implements EmailSenderService {
 
         EmailSenderMapper.toDto(emailSender, new EmailSenderDto());
 
-        return InternalResponse.successResponse("EmailSender updated successfully!", emailSender);
+        return InternalResponse.successResponse("EmailSender deleted successfully!", emailSender);
     }
 }
