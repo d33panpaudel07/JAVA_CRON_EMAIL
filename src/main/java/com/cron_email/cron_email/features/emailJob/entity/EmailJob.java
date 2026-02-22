@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -30,8 +31,11 @@ public class EmailJob extends BaseEntity<Long> {
     @Column(name = "BODY")
     private String body;
 
-    @OneToMany(mappedBy = "emailJob", fetch = FetchType.LAZY)
-    private List<EmailRecipient> emailRecipients;
+    @Column(name = "FREQUENCY")
+    private Long frequency;
+
+    @Column(name = "STOP_DATE")
+    private LocalDate stopDate;
 
     @OneToMany(mappedBy = "emailJob", fetch = FetchType.LAZY)
     private List<EmailLog> emailLogs;
