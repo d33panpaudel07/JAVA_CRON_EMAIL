@@ -1,8 +1,8 @@
-package com.cron_email.cron_email.features.email.impl;
+package com.cron_email.cron_email.features.emailSender.impl;
 
 import com.cron_email.cron_email.core.dto.InternalResponse;
-import com.cron_email.cron_email.features.email.dto.EmailDetailsDto;
-import com.cron_email.cron_email.features.email.service.EmailService;
+import com.cron_email.cron_email.features.emailSender.dto.EmailDetailsDto;
+import com.cron_email.cron_email.features.emailSender.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;

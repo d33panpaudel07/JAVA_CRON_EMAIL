@@ -1,6 +1,6 @@
-package com.cron_email.cron_email.features.email.repository;
+package com.cron_email.cron_email.features.emailSender.repository;
 
-import com.cron_email.cron_email.features.email.entity.EmailSender;
+import com.cron_email.cron_email.features.emailSender.entity.EmailSender;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

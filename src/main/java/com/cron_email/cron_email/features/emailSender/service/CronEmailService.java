@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.service;
+package com.cron_email.cron_email.features.emailSender.service;
 
 import com.cron_email.cron_email.core.dto.GlobalResponse;
 import com.cron_email.cron_email.features.emailJob.dto.ScheduleEmailDto;

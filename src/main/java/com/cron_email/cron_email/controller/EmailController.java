@@ -2,9 +2,9 @@ package com.cron_email.cron_email.controller;
 
 import com.cron_email.cron_email.core.dto.GlobalResponse;
 import com.cron_email.cron_email.core.dto.InternalResponse;
-import com.cron_email.cron_email.features.email.dto.EmailDetailsDto;
-import com.cron_email.cron_email.features.email.service.EmailService;
-import com.cron_email.cron_email.features.email.service.CronEmailService;
+import com.cron_email.cron_email.features.emailSender.dto.EmailDetailsDto;
+import com.cron_email.cron_email.features.emailSender.service.EmailService;
+import com.cron_email.cron_email.features.emailSender.service.CronEmailService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

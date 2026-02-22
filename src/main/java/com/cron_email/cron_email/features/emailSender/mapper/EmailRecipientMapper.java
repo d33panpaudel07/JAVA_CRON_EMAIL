@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.mapper;
+package com.cron_email.cron_email.features.emailSender.mapper;
 
 import com.cron_email.cron_email.core.enums.RecipientTypeEnum;
 import com.cron_email.cron_email.features.base.mapper.BaseMapper;

@@ -1,12 +1,12 @@
-package com.cron_email.cron_email.features.email.impl;
+package com.cron_email.cron_email.features.emailSender.impl;
 
 import com.cron_email.cron_email.core.dto.GlobalResponse;
 import com.cron_email.cron_email.features.emailJob.entity.EmailJob;
 import com.cron_email.cron_email.features.emailJob.dto.ScheduleEmailDto;
 import com.cron_email.cron_email.features.emailJob.dto.internalDto.EmailRecipientDto;
-import com.cron_email.cron_email.features.email.manager.EmailJobManager;
-import com.cron_email.cron_email.features.email.mapper.EmailJobMapper;
-import com.cron_email.cron_email.features.email.service.CronEmailService;
+import com.cron_email.cron_email.features.emailSender.manager.EmailJobManager;
+import com.cron_email.cron_email.features.emailSender.mapper.EmailJobMapper;
+import com.cron_email.cron_email.features.emailSender.service.CronEmailService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

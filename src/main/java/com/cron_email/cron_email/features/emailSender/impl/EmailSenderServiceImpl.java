@@ -1,13 +1,13 @@
-package com.cron_email.cron_email.features.email.impl;
+package com.cron_email.cron_email.features.emailSender.impl;
 
 import com.cron_email.cron_email.core.dto.InternalResponse;
 import com.cron_email.cron_email.core.exception.BusinessException;
 import com.cron_email.cron_email.core.exception.ResourceNotFoundException;
-import com.cron_email.cron_email.features.email.dto.EmailSenderDto;
-import com.cron_email.cron_email.features.email.entity.EmailSender;
-import com.cron_email.cron_email.features.email.mapper.EmailSenderMapper;
-import com.cron_email.cron_email.features.email.repository.EmailSenderRepo;
-import com.cron_email.cron_email.features.email.service.EmailSenderService;
+import com.cron_email.cron_email.features.emailSender.dto.EmailSenderDto;
+import com.cron_email.cron_email.features.emailSender.entity.EmailSender;
+import com.cron_email.cron_email.features.emailSender.mapper.EmailSenderMapper;
+import com.cron_email.cron_email.features.emailSender.repository.EmailSenderRepo;
+import com.cron_email.cron_email.features.emailSender.service.EmailSenderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.entity;
+package com.cron_email.cron_email.features.emailSender.entity;
 
 import com.cron_email.cron_email.features.base.entity.BaseEntity;
 import jakarta.persistence.Column;

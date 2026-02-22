@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.dto;
+package com.cron_email.cron_email.features.emailSender.dto;
 
 import lombok.Getter;
 import lombok.Setter;

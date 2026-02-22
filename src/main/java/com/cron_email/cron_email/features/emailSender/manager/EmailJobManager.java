@@ -1,4 +1,4 @@
-package com.cron_email.cron_email.features.email.manager;
+package com.cron_email.cron_email.features.emailSender.manager;
 
 import com.cron_email.cron_email.core.exception.ResourceNotFoundException;
 import com.cron_email.cron_email.features.emailJob.entity.EmailJob;
