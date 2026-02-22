@@ -2,6 +2,7 @@ package com.cron_email.cron_email.features.emailJob.entity;
 
 import com.cron_email.cron_email.features.base.entity.BaseEntity;
 import com.cron_email.cron_email.features.emailAttachment.entity.EmailAttachment;
+import com.cron_email.cron_email.features.emailBatch.entity.EmailBatch;
 import com.cron_email.cron_email.features.emailLog.entity.EmailLog;
 import com.cron_email.cron_email.features.emailRecipient.entity.EmailRecipient;
 import jakarta.persistence.*;
@@ -36,6 +37,9 @@ public class EmailJob extends BaseEntity<Long> {
 
     @Column(name = "STOP_DATE")
     private LocalDate stopDate;
+
+    @ManyToMany(mappedBy = "emailJobs", fetch = FetchType.LAZY)
+    private List<EmailBatch> emailBatches;
 
     @OneToMany(mappedBy = "emailJob", fetch = FetchType.LAZY)
     private List<EmailLog> emailLogs;

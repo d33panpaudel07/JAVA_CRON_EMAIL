@@ -2,7 +2,7 @@ package com.cron_email.cron_email.features.emailRecipient.entity;
 
 import com.cron_email.cron_email.core.enums.RecipientTypeEnum;
 import com.cron_email.cron_email.features.base.entity.BaseEntity;
-import com.cron_email.cron_email.features.emailJob.entity.EmailJob;
+import com.cron_email.cron_email.features.emailBatch.entity.EmailBatch;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,8 +16,8 @@ import lombok.Setter;
 public class EmailRecipient extends BaseEntity<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMAIL_JOB_ID")
-    private EmailJob emailJob;
+    @JoinColumn(name = "EMAIL_BATCH_ID")
+    private EmailBatch emailBatch;
 
     @Column(name = "RECIPIENT_EMAIL")
     private String recipientEmail;

@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -24,9 +23,13 @@ public class EmailBatch extends BaseEntity<Long> {
     @Column(name = "BATCH_NAME")
     private String batchName;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EMAIL_JOB_ID")
-    private EmailJob emailJob;
+    @ManyToMany
+    @JoinTable(
+            name = "EMAIL_BATCH_JOBS",
+            joinColumns = @JoinColumn(name = "EMAIL_BATCH_ID"),
+            inverseJoinColumns = @JoinColumn(name = "EMAIL_JOB_ID")
+    )
+    private List<EmailJob> emailJobs;
 
     @OneToMany(mappedBy = "emailJob", fetch = FetchType.LAZY)
     @JoinColumn(name = "EMAIL_BATCH_ID")
